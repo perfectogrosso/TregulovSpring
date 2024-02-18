@@ -22,6 +22,9 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <bean id = "myPerson"
           class = "org.example.tregulovspring.SpringIntro.Person">
         <property name="pet" ref="myPet"/>
+
+        <property name="surname" value="Tregulov"/>
+        <property name="age" value="35"/>
     </bean>
 
 </beans>
