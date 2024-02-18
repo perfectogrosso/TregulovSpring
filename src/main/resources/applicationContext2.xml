@@ -14,9 +14,11 @@ http://www.springframework.org/schema/context
 
 http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id = "myPet"
-        class = "org.example.tregulovspring.SpringIntro.Dog"
-        scope="prototype">
+    <bean id="myPet"
+          class="org.example.tregulovspring.SpringIntro.Dog"
+          scope="prototype"
+          init-method="init"
+          destroy-method="destroy">
 
     </bean>
 
