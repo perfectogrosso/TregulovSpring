@@ -1,24 +1,30 @@
 package org.example.tregulovspring.SpringIntro;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component()
-public class Dog implements Pet{
+public class Dog implements Pet {
 
 
-    public Dog(){
+    public Dog() {
         System.out.println("Dog Bean is created");
     }
+
     @Override
-    public void say(){
+    public void say() {
         System.out.println("Bow-wow!");
     }
 
-    public void init(){
+    @PostConstruct
+    public void init() {
         System.out.println("Class Dog: init method");
     }
 
-    public void destroy(){
+    @PreDestroy
+    public void destroy() {
         System.out.println("Class Dog: destroy method");
     }
 }
