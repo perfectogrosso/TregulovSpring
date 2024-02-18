@@ -9,21 +9,22 @@ public class Person {
     private String surname;
     private int age;
 
-    @Autowired
-    public Person(Pet pet) {
-        System.out.println("Person Bean is created");
-        this.pet = pet;
-    }
-
-//    public Person() {
+//    @Autowired
+//    public Person(Pet pet) {
 //        System.out.println("Person Bean is created");
+//        this.pet = pet;
 //    }
+
+    public Person() {
+        System.out.println("Person Bean is created");
+    }
 
     public void callYoutPet() {
         System.out.println("Hello, my lovely pet!");
         pet.say();
     }
 
+    @Autowired
     public void setPet(Pet pet) {
         this.pet = pet;
         System.out.println("Class Person: set Pet");
