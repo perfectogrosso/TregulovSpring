@@ -1,23 +1,29 @@
 package org.example.tregulovspring.SpringIntro;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
     private Pet pet;
     private String surname;
     private int age;
 
-//    public Person(Pet pet){
-//        System.out.println("Person Bean is created");
-//        this.pet = pet;
-//    }
-
-    public Person(){
+    @Autowired
+    public Person(Pet pet) {
         System.out.println("Person Bean is created");
+        this.pet = pet;
     }
 
-    public void callYoutPet(){
+//    public Person() {
+//        System.out.println("Person Bean is created");
+//    }
+
+    public void callYoutPet() {
         System.out.println("Hello, my lovely pet!");
         pet.say();
     }
+
     public void setPet(Pet pet) {
         this.pet = pet;
         System.out.println("Class Person: set Pet");
