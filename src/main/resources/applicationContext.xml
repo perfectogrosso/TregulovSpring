@@ -14,6 +14,8 @@ http://www.springframework.org/schema/context
 
 http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:application.properties"/>
+
     <bean id = "myPet"
         class = "org.example.tregulovspring.SpringIntro.Cat">
 
@@ -23,8 +25,8 @@ http://www.springframework.org/schema/context/spring-context.xsd">
           class = "org.example.tregulovspring.SpringIntro.Person">
         <property name="pet" ref="myPet"/>
 
-        <property name="surname" value="Tregulov"/>
-        <property name="age" value="35"/>
+        <property name="surname" value="${person.surname}"/>
+        <property name="age" value="${person.age}"/>
     </bean>
 
 </beans>
