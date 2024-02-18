@@ -1,20 +1,21 @@
 package org.example.tregulovspring.SpringIntro;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Autowired
+//    @Autowired
+//    @Qualifier("catBean")
     private Pet pet;
     private String surname;
     private int age;
-
-//    @Autowired
-//    public Person(Pet pet) {
-//        System.out.println("Person Bean is created");
-//        this.pet = pet;
-//    }
+    @Autowired
+    public Person(@Qualifier("dog") Pet pet) {
+        System.out.println("Person Bean is created");
+        this.pet = pet;
+    }
 
     public Person() {
         System.out.println("Person Bean is created");
@@ -26,6 +27,7 @@ public class Person {
     }
 
 //    @Autowired
+//    @Qualifier("dog")
     public void setPet(Pet pet) {
         this.pet = pet;
         System.out.println("Class Person: set Pet");
