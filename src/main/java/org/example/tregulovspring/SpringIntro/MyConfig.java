@@ -1,10 +1,24 @@
 package org.example.tregulovspring.SpringIntro;
 
-import org.springframework.context.annotation.ComponentScan;
+import jdk.jfr.Name;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
-@ComponentScan("org.example.tregulovspring.SpringIntro")
+@PropertySource("classpath:application.properties")
 public class MyConfig {
+    @Bean
+    @Scope("singleton")
+    public Pet catBean(){
+        System.out.println("!!!");
+        return new Cat();
+    }
+
+    @Bean
+    public Person personBean(){
+        return new Person(catBean());
+    }
 
 }

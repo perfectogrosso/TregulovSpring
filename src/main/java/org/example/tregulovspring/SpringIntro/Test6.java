@@ -7,6 +7,17 @@ public class Test6 {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
         Person person = context.getBean("personBean", Person.class);
-        person.callYoutPet();
+//        person.callYoutPet();
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
+
+//        Pet pet = context.getBean("catBean", Pet.class);
+//        Pet pet2 = context.getBean("catBean", Pet.class);
+//        pet.say();
+//        pet2.say();
+
+
+
+        context.close();
     }
 }
