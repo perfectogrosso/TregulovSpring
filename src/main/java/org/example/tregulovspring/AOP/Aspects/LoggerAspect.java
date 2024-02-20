@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LoggerAspect {
-    @Before("execution(public void get*())")
+    @Before("execution(public void getBook(org.example.tregulovspring.AOP.Book))")
     public void beforeGetBookAdvice(){
         System.out.println("beforeGetBookAdvice: попытка получить книгу");
     }
 
-    @Before("execution(public * returnBook())")
-    public void beforeReturnBookAdvice(){
-        System.out.println("beforeReturnBookAdvice: попытка вернуть книгу");
-    }
+//    @Before("execution(public * returnBook())")
+//    public void beforeReturnBookAdvice(){
+//        System.out.println("beforeReturnBookAdvice: попытка вернуть книгу");
+//    }
 }
